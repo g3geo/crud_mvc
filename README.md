@@ -8,14 +8,24 @@ Aplikasi CRUD sederhana ini digunakan untuk mengelola data "mahasiswa" dengan me
 Langkah pertama adalah membuat database dan tabel yang digunakan oleh aplikasi. Jalankan perintah SQL berikut di MySQL:
 
 ```sql
-CREATE SCHEMA dbmahasiswa1;
-USE dbmahasiswa1;
+CREATE DATABASE IF NOT EXISTS crud_mvc;
+USE crud_mvc;
 
-CREATE TABLE mahasiswa (
+CREATE TABLE IF NOT EXISTS products (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nama VARCHAR(100),
-    nim VARCHAR(15)
+    name VARCHAR(255) NOT NULL,
+    price DECIMAL(10,2) NOT NULL
 );
 
-INSERT INTO mahasiswa (nama, nim) VALUES
-('isham', '2351900111038');
+## Fitur
+
+- **Create**: Menambahkan produk baru ke dalam database.
+- **Read**: Menampilkan semua produk yang tersimpan dalam database.
+- **Delete**: Menghapus produk berdasarkan ID.
+
+## Teknologi yang Digunakan
+
+- **PHP**: Bahasa pemrograman utama untuk aplikasi.
+- **MySQL**: Sistem manajemen basis data untuk menyimpan data produk.
+- **MVC**: Struktur aplikasi menggunakan pola arsitektur Model-View-Controller.
+- **XAMPP**: Menggunakan Apache dan MySQL dari XAMPP untuk server lokal.
